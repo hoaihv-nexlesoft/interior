@@ -1,0 +1,29 @@
+
+.title-about {
+    margin-bottom: 20px;
+}
+.proLeft p {
+    display: block;
+    border-bottom: solid 1px #ccc;
+    padding: 15px 0;
+    margin-bottom: 0;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase
+}
+.proLeft p strong {
+    font-size: 15px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px
+}
+.introduce-about {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+.detail-image {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 10px;
+   margin-bottom: 10px;
+}

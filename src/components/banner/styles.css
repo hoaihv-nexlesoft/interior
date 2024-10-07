@@ -1,0 +1,531 @@
+.swiper-slide {
+    height: 444px !important;
+  }
+  .swiper-container {
+    width: 100% !important;
+    overflow: hidden;
+  }
+   .sliderContainer {
+    width: 100%;
+    height: 444px;
+    overflow: hidden;
+  }
+  
+  .slide {
+    width: 200%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .img {
+    width: auto;
+    height: 100%;
+    transform: scale(2);
+    transform-origin: center;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 1;
+  }
+  
+  .img2 {
+   width: auto;
+   height: 320px;
+   z-index: 2;
+   display: none;
+  }
+  
+  .img3 {
+    width: 200px;
+    height: auto;
+    z-index: 2;
+    display: none;
+   }
+  
+  .overlay-image {
+    position: absolute;
+    right: 300px;
+    top: -100px;
+    opacity: 0; 
+    animation: slideDown 4s forwards; 
+  }
+  @keyframes slideDown {
+    0% {
+      top: -100px;
+      opacity: 0;
+    }
+    100% {
+      top: 0%; 
+      opacity: 1;
+      transform: translateY(-0%); 
+    }
+  }
+  .animation {
+    animation: 4s linear forwards;
+    overflow: hidden;
+    animation-name: scale; 
+    animation-iteration-count: 1;
+  }
+  @keyframes scale {
+   100% {
+    transform: scale(1.5);
+    transition: all;
+    }
+  }
+  
+  
+  /* Nội dung */
+  .content {
+    position: absolute;
+    width: 250px;
+    left: -100%; 
+    opacity: 0;
+    transition: all 4s ease;
+    z-index: 3;
+    color: white;
+  }
+  
+  .content.show {
+    left: 4%;
+    opacity: 1; 
+    transform: translateX(4%); 
+  }
+  
+  .line-new {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 2px;
+    height: 2px;
+  }
+  
+  .line-top {
+    top: -10px;
+    left: -20px;
+    opacity: 0;
+    box-sizing: border-box; 
+    animation: top_left 1s linear forwards; 
+    animation-delay: 4s;
+  }
+  
+  .line-right {
+    top: -10px;
+    left: 254px;
+    opacity: 0;
+    box-sizing: border-box;
+    animation: top_bottom 0.5s linear; 
+    animation-fill-mode: both;
+    animation-delay: 5s;
+  }
+  
+  .line-bottom {
+    top: 130px;
+    right: -6px;
+    opacity: 0;
+    box-sizing: border-box; 
+    animation: top_left 1s linear; 
+    animation-fill-mode: both;
+    animation-delay: 5.5s;
+  }
+  
+  .line-left {
+    bottom: -14px;
+    left: -20px;
+    opacity: 0;
+    box-sizing: border-box; 
+    animation: top_bottom 0.5s linear; 
+    animation-fill-mode: both;
+    animation-delay: 6.5s;
+  }
+  
+  @keyframes top_left {
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+    from {
+        width: 0;
+    }
+  
+    to {
+        width: 110%
+    }
+  }
+  
+  @keyframes top_bottom {
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+    from {
+        height: 0;
+    }
+  
+    to {
+        height: 120%
+    }
+  }
+  
+  @keyframes bottom_left {
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  
+    from {
+        left: 100%
+    }
+  
+    to {
+        left: 0
+    }
+  }
+  
+  @keyframes bottom_top {
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  
+    from {
+        top: 100%
+    }
+  
+    to {
+        top: 3px
+    }
+  }
+  
+  .span-text {
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 42px;
+  }
+  .a-link {
+    margin-top: 0.5rem;
+    cursor: pointer;
+  }
+ 
+  .swiper-pagination-bullet {
+    width: 40px !important;
+    height: 8px !important;
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+  }
+  
+  
+  .swiper-pagination-bullet-active {
+    background-color: rgb(255, 255, 255) !important; 
+  }
+  
+  .bg-overlay {
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    transform: scale(2);
+    overflow: hidden;
+    opacity: 0.4;
+    z-index: 2;
+    object-fit: cover;
+  }
+  .slide::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    overflow: hidden;
+    opacity: 0.2;
+    z-index: 2;
+    background-color: #131414;
+  }
+  /*----------------------------------------------------------------*/
+  
+  @media (min-width: 965px) {
+   .img {
+    left: 240px;
+   }
+  }
+
+@media (min-width: 576px) {
+  .container {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #e9ecef;
+  }
+}
+
+/* Tablet (767px trở lên) */
+@media (min-width: 767px) {
+  .slide {
+    width: 130%;
+  }
+ .img2 {
+  display: block;
+ }
+ .img3 {
+  display: block;
+ }
+ .span-text {
+  font-size: 35px;
+ }
+}
+
+/* Laptop (1024px trở lên) */
+@media (min-width: 1024px) {
+  .swiper-slide {
+    height: 525px !important;
+  }
+  .swiper-container {
+    width: 100% !important;
+    overflow: hidden;
+  }
+   .sliderContainer {
+    width: 100%;
+    height: 525px;
+    overflow: hidden;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .img {
+    width: 100%;
+    height: 100%;
+    transform: scale(2);
+    transform-origin: center;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 1;
+  }
+  
+  .img2 {
+   width: 211px;
+   height: 492px;
+   z-index: 2;
+  }
+  
+  .img3 {
+    width: 300px;
+    height: 290px;
+    z-index: 2;
+   }
+  
+  .overlay-image {
+    position: absolute;
+    right: 100px;
+    top: -100px;
+    opacity: 0; 
+    animation: slideDown 4s forwards; 
+  }
+  @keyframes slideDown {
+    0% {
+      top: -100px;
+      opacity: 0;
+    }
+    100% {
+      top: 0%; 
+      opacity: 1;
+      transform: translateY(-0%); 
+    }
+  }
+  .animation {
+    animation: 4s linear forwards;
+    overflow: hidden;
+    animation-name: scale; 
+    animation-iteration-count: 1;
+  }
+  @keyframes scale {
+   100% {
+    transform: scale(1.5);
+    transition: all;
+    }
+  }
+  
+  
+  /* Nội dung */
+  .content {
+    position: absolute;
+    width: 300px;
+    left: -100%; 
+    opacity: 0;
+    transition: all 4s ease;
+    z-index: 3;
+    color: white;
+  }
+  
+  .content.show {
+    left: 20%;
+    opacity: 1; 
+    transform: translateX(-20%); 
+  }
+  
+  .line-new {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 2px;
+    height: 2px;
+  }
+  
+  .line-top {
+    top: -10px;
+    left: -20px;
+    opacity: 0;
+    box-sizing: border-box; 
+    animation: top_left 2s linear forwards; 
+    animation-delay: 4s;
+  }
+  
+  .line-right {
+    top: -10px;
+    left: 308px;
+    opacity: 0;
+    box-sizing: border-box;
+    animation: top_bottom 1s linear; 
+    animation-fill-mode: both;
+    animation-delay: 7s;
+  }
+  
+  .line-bottom {
+    top: 130px;
+    right: -10px;
+    opacity: 0;
+    box-sizing: border-box; 
+    animation: top_left 2s linear; 
+    animation-fill-mode: both;
+    animation-delay: 8.5s;
+  }
+  
+  .line-left {
+    bottom: -13px;
+    left: -20px;
+    opacity: 0;
+    box-sizing: border-box; 
+    animation: top_bottom 1s linear; 
+    animation-fill-mode: both;
+    animation-delay: 11s;
+  }
+  
+  @keyframes top_left {
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+    from {
+        width: 0;
+    }
+  
+    to {
+        width: 110%
+    }
+  }
+  
+  @keyframes top_bottom {
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+    from {
+        height: 0;
+    }
+  
+    to {
+        height: 120%
+    }
+  }
+  
+  @keyframes bottom_left {
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  
+    from {
+        left: 100%
+    }
+  
+    to {
+        left: 0
+    }
+  }
+  
+  @keyframes bottom_top {
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  
+    from {
+        top: 100%
+    }
+  
+    to {
+        top: 3px
+    }
+  }
+  
+  .span-text {
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 42px;
+  }
+  .a-link {
+    margin-top: 0.5rem;
+    cursor: pointer;
+  }
+ 
+  .swiper-pagination-bullet {
+    width: 40px !important;
+    height: 8px !important;
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+  }
+  
+  
+  .swiper-pagination-bullet-active {
+    background-color: rgb(255, 255, 255) !important; 
+  }
+}
+
+/* Màn hình lớn (1025px trở lên) */
+@media (min-width: 1400px) {
+  .swiper-slide {
+    height: 650px !important;
+  }
+   .sliderContainer {
+    height: 650px;
+  }
+}

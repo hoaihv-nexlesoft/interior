@@ -1,0 +1,466 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import '@radix-ui/themes/styles.css';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --hover-color: rgba(232, 232, 232, 0.89);
+  --active-color: rgba(61, 61, 61, 0.89);
+  --six-color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+*::after, *::before {
+  box-sizing: border-box;
+}
+
+.item {
+  position: relative; 
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 240px;
+  .img-prj {
+      position: absolute; 
+      z-index: 2;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      img {
+          height: 100%;
+          width: 100%;
+          margin-left: 20px;
+          margin-bottom: 20px;
+          object-fit: cover;
+          
+      }
+  }
+  .img-prj::after {
+   content: '';
+   position: absolute; 
+   z-index: 4;
+   left: 0px;
+   bottom: 0;
+   top: 0;
+   right: 0;
+   margin-left: 20px;
+   background-color: rgb(102, 102, 102);
+   opacity: 0;
+   width: 100%;
+   height: 100%;
+   transition: opacity 0.3s ease;
+  }
+  .img-prj:hover::after {
+      opacity: 0.4;
+      cursor: pointer;
+     }
+  .bg {
+      position: absolute; 
+      z-index: 1;
+      top: 20px;
+      left: 0;
+      bottom: 20px;
+      right: 20px;
+      opacity: 0.3;
+      pointer-events: none;
+      height: 240px;
+      width: calc(100% - 20px);
+  }
+  .title {
+      position: absolute;
+      font-family: Montserrat, "Helvetica Neue", sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+      text-transform: uppercase;
+      z-index: 3;
+      left: 30px;
+      top: 170px;
+      color: white;
+      width: 100%;
+  }
+  .title:hover {
+    color: rgba(232, 232, 232, 0.89);
+  }
+
+  .category {
+      position: absolute;
+      font-family: Montserrat, "Helvetica Neue", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.4;
+      text-transform: uppercase;
+      z-index: 3;
+      left: 30px;
+      top: 190px;
+      color: white;
+      padding-bottom: 1px;
+      border-bottom: 1px solid white;
+  }
+  .category:hover {
+   color: rgba(232, 232, 232, 0.89);
+   border-color: rgba(232, 232, 232, 0.89);
+  }
+}
+
+.menuLeftMain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuLeft {
+  margin: 0 15px;
+  width: auto;
+}
+.menuLeft ul {
+  margin: 0;
+  padding: 0
+}
+
+.menuLeft>ul>li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: #666;
+  text-align: center
+}
+
+.menuLeft>ul>li>a {
+  display: block;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: inherit;
+  line-height: 40px;
+  text-decoration: none
+}
+
+.menuLeft>ul>li>a>i {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 8px;
+  color: inherit;
+  margin-left: 3px;
+  margin-top: -3px
+}
+
+.menuLeft>ul>li>a>i:before {
+  content: "\f01b"
+}
+
+.menuLeft>ul>li.current>a i:before,.menuLeft>ul>li>a i.current:before {
+  content: "\f021";
+  font-size: 9px
+}
+
+.menuLeft>ul>li:hover {
+  color: #999
+}
+
+.menuLeft>ul>li.current {
+  color: #999
+}
+
+.menuLeft>ul>li.current>ul {
+  display: block
+}
+
+.menuLeft>ul>li>ul {
+  display: none;
+  margin-bottom: 15px;
+  position: relative
+}
+
+.menuLeft>ul>li>ul>li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  position: relative
+}
+
+.menuLeft>ul>li>ul>li>a {
+  display: block;
+  font-size: 14px;
+  color: #777;
+  text-decoration: none;
+  padding: 5px 0
+}
+
+.menuLeft>ul>li>ul>li.current>a,.menuLeft>ul>li>ul>li:hover>a {
+  color: #999
+}
+
+.logo {
+  width: auto;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 135px;
+}
+
+.logo img {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
+.right-banner {
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  display: none;
+  img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(2);
+      animation: imageScale 2s forwards;
+  }
+}
+@keyframes imageScale {
+  100%{
+      transform: scale(1.5);
+  }
+}
+
+.container-global {
+  padding: 30px 15px;
+  width: 100%;
+}
+.global-font-title {
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+.global-font-text {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.6px;
+  color: #646464;
+}
+.global-h2 {
+  font-size: 26px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  display: inline-flex;
+  gap: 5px;
+  justify-content: start;
+  align-items: end;
+  color: black;
+  .our {
+      font-weight: 300;
+  }  
+  .prj {
+      font-weight: 700;
+  }
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbcbcb;
+  box-shadow: none; 
+  margin-bottom: 10px;
+}
+textarea:focus, input:focus {
+  border-color:#333 !important;
+  box-shadow: none;
+  outline: none;
+}
+
+.label {
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #999;
+  margin-bottom: 8px;
+}
+.label::after {
+  content: '*';
+  color: red;
+  margin-left: 3px;
+}
+.button-submit {
+  background-color: #333;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.button-submit:hover {
+  background-color: #8d8c8c;
+}
+
+@media (min-width: 576px) {
+ 
+}
+
+@media (min-width: 768px) {
+ 
+}
+
+@media (min-width: 1024px) {
+  /* .item {
+    position: relative; 
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 40px 40px 0;
+    padding: 0 0 30px 25px;
+    width: auto;
+    height: 255px;
+    overflow: hidden;
+    .img-prj {
+        position: absolute; 
+        margin-left: 20px;
+        margin-bottom: 20px;
+        z-index: 2;
+        left: 0px;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+    .img-prj::after {
+     content: '';
+     position: absolute; 
+     z-index: 4;
+     left: 0px;
+     bottom: 0;
+     top: 0;
+     right: 0;
+     background-color: rgb(102, 102, 102);
+     opacity: 0;
+     width: 100%;
+     height: 100%;
+     transition: opacity 0.3s ease;
+    }
+    .img-prj:hover::after {
+        opacity: 0.4;
+        cursor: pointer;
+       }
+    .bg {
+        position: absolute; 
+        z-index: 1;
+        top: 40px;
+        left: -20px;
+        opacity: 0.3;
+        pointer-events: none;
+        height: 100%;
+    }
+    .title {
+        position: absolute;
+        font-family: Montserrat, "Helvetica Neue", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.4;
+        text-transform: uppercase;
+        z-index: 3;
+        left: 30px;
+        top: 130px;
+        color: white;
+    }
+    .title:hover {
+      color: rgba(232, 232, 232, 0.89);
+    }
+  
+    .category {
+        position: absolute;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.4;
+        text-transform: uppercase;
+        z-index: 3;
+        left: 30px;
+        top: 190px;
+        color: white;
+        padding-bottom: 1px;
+        border-bottom: 1px solid white;
+    }
+    .category:hover {
+     color: rgba(232, 232, 232, 0.89);
+     border-color: rgba(232, 232, 232, 0.89);
+    }
+  } */
+
+  .right-banner {
+    display: block;
+  }
+
+  .global-font-title {
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 49px;
+}
+
+.container-global {
+  padding: 50px 70px;
+  width: calc(100% - 200px);
+}
+
+.global-h2 {
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+.global-font-text {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  
+}
+.item {
+  .title {
+    font-size: 20px;
+    width: 90%;
+    top: 150px;
+  }
+  .category {
+    font-size: 16px;
+    top: 205px;
+  }
+}
+}
+
+@media (min-width: 1025px) {
+
+}

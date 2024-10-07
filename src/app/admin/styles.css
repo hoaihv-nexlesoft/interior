@@ -1,0 +1,32 @@
+.hexagon {
+    width: 100px;
+    height: 55px;
+    background-color: #6C6;
+    position: relative;
+    margin: 50px;
+    clip-path: polygon(
+      25% 0%, 
+      75% 0%, 
+      100% 50%, 
+      75% 100%, 
+      25% 100%, 
+      0% 50%
+    );
+    border: 5px solid #333;
+  }
+
+  .admin-page {
+    padding: 15px;
+    table {
+        border: 1px solid #333;
+    }
+
+    .paginate {
+        width: 100%;
+        --pagination-active-bg: #333;
+        --pagination-color: #333;
+        display: flex;
+        justify-content: end;
+        margin-top: 5px;
+    }
+  }

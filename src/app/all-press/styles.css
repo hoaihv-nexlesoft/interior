@@ -1,0 +1,85 @@
+.container-all-project {
+    padding: 30px 15px;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.horzi {
+   width: 60%;
+   height: 6px;
+   background-color: #d7d6d65c;
+   margin: 20px 0 20px 15px;
+}
+
+.tab-container p {
+    display: block;
+    margin-bottom: 0;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    
+}
+.tab-container p strong {
+    font-size: 15px;
+    display: block;
+    border-bottom: solid 1px #33333300;
+}
+.tab-container p strong:hover {
+    color: #333;
+    border-bottom-color: #333;
+    cursor: pointer;
+}
+.tab-container .active {
+    color: #333;
+    border-bottom-color: #333;
+}
+
+.items-container {
+    display: grid;
+    flex-wrap: wrap;
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+    .title {
+        top: 200px;
+        text-align: bottom;
+    }
+}
+    
+    @media (min-width: 576px) {
+        .items-container {
+            grid-template-columns: repeat(2, 1fr);
+            .title {
+                top: 190px;
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        .items-container {
+            grid-template-columns: repeat(3, 1fr);
+            .title {
+                top: 180px;
+            }
+        }
+    }
+
+       @media (min-width: 1024px) {
+        .items-container {
+            .title {
+                top: 160px;
+            }
+        }
+       }
+
+    }
+    @media (min-width: 1024px) {
+
+        .container-all-project {
+            padding: 50px 70px;
+        }
+    }

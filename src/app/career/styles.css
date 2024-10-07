@@ -1,0 +1,58 @@
+
+.title-career-1 {
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 23.8px;
+    text-transform: uppercase;
+}
+.text-font-career {
+    text-align: justify;
+}
+.ctn-table {
+    overflow-x: scroll;
+    margin-bottom: 15px;
+}
+.table, tr, td {
+    border: 1px solid #333;
+}
+td {
+    padding: 10px;
+}
+.form-recruitment {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.memberBack {
+    padding: 20px 0;
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--six-color);
+    font-weight: 600;
+}
+.memberBack:hover {
+   color: black;
+}
+
+.introduce {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    gap: 70px;
+    margin-bottom: 20px;
+}
+.detail-image {
+    img {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-recruitment {
+        grid-template-columns: 1.5fr 3fr;
+    }
+}

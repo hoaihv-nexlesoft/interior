@@ -1,0 +1,52 @@
+
+.memberBack {
+    padding: 20px 0;
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--six-color);
+    font-weight: 600;
+}
+.memberBack:hover {
+   color: black;
+}
+
+.proLeft p {
+    display: block;
+    border-bottom: solid 1px #ccc;
+    padding: 15px 0;
+    margin-bottom: 0;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.proLeft p strong {
+    font-size: 15px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px
+}
+.proRight {
+    text-align: justify;
+    text-size-adjust: 100%;
+}
+.introduce {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.detail-image {
+    img {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .introduce {
+        gap: 70px;
+    }
+}

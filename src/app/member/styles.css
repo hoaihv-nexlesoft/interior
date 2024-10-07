@@ -1,0 +1,16 @@
+
+.title-member {
+   margin-bottom: 20px;
+}
+
+.container-member {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.detail-image {
+    img {
+        margin-bottom: 10px;
+    }
+}
