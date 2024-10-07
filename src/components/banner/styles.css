@@ -521,11 +521,11 @@
 }
 
 /* Màn hình lớn (1025px trở lên) */
-@media (min-width: 1400px) {
+@media (min-width: 1550px) {
   .swiper-slide {
-    height: 650px !important;
+    height: 55vh !important;
   }
    .sliderContainer {
-    height: 650px;
+    height: 55vh;
   }
 }
